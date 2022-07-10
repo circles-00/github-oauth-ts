@@ -1,0 +1,44 @@
+{
+  "name": "github-oauth-ts",
+  "version": "1.0.0",
+  "description": "A Github OAuth Client",
+  "main": "dst/src/index.js",
+  "source": "dst/src/index.js",
+  "types": "dst/types/src/index.d.ts",
+  "scripts": {
+    "dev": "nodemon -e ts -x ts-node --project tsconfig.json src/index.ts",
+    "prepare": "npm run build",
+    "build": "tsc -p tsconfig.prod.json"
+  },
+  "files": [
+    "dst",
+    "package.json",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./dst/src/index.js"
+  },
+  "keywords": [],
+  "author": "Nikola Krezeski",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@types/puppeteer": "^5.4.6",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^12.3.4",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "axios": "^0.26.0"
+  }
+}

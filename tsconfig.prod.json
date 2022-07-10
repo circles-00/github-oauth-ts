@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dst",
+    "rootDir": ".",
+    "noEmit": false,
+    "declaration": true,
+    "declarationDir": "./dst/types",
+  },
+  "include": ["!*.d.ts","**/*.ts", "**/*.tsx","!**/*.d.ts", "package.json", "README.md"],
+  "exclude": ["node_modules", "**/*.d.ts"]
+}
