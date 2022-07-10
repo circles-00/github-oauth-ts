@@ -69,7 +69,7 @@ class GithubOauthClient implements IGithubOauth {
         { headers },
       )
 
-      data.email = emailData.find((email: any) => email.primary)
+      data.email = (emailData.find((email: any) => email.primary) || {}).email
 
       return data
     } catch (err: any) {
