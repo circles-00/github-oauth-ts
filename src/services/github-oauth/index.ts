@@ -56,11 +56,20 @@ class GithubOauthClient implements IGithubOauth {
 
   async getUserInfo(accessToken: string) {
     try {
+      const headers = {
+        Authorization: `Bearer ${accessToken}`,
+      }
+
       const { data } = await axios.get('https://api.github.com/user', {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
+        headers,
       })
+
+      const { data: emailData } = await axios.get(
+        'https://api.github.com/user/emails',
+        { headers },
+      )
+
+      data.email = emailData.find((email: any) => email.primary)
 
       return data
     } catch (err: any) {
